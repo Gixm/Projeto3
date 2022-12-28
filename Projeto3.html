@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+
+    <style>
+        div#titulo {
+            font-family: cursive;
+            color: rgb(11, 174, 11);
+            font-size: 30px;
+            text-align: center; 
+        }
+    </style>
+    <div id = "titulo">
+        Devo votar ou não?
+    </div>
+    <label for="ididade"><strong>Digite sua Idade:</strong></label><br/>
+    <input type="number" name="txtidade" id="ididade" value ="" ><br/><br/>
+    
+    <input type="button" value="Verificar" onclick="verificarIdade()">
+    
+    <div id="res"> 
+
+    </div>
+
+    <script>
+        function verificarIdade(){
+            
+            //capturando o input referte ao id ididade
+            var inputCapturado = window.document.querySelector('input#ididade')
+
+            //Capturando o value digitado no input text 
+            var idade = Number(inputCapturado.value)
+            //Capturando a div onde será apresentado o resultado da avaliação
+            var res = window.document.querySelector('div#res')
+            
+           
+            if (idade <16){ 
+                res.innerHTML = `<p> Você NÃO pode votar!Idade: ${idade}`
+            } else if (idade >18 && idade >80) {
+                res.innerHTML = `<p> Seu voto é opcional!Idade: ${idade}`
+            } else {
+                res.innerHTML = `<p> Seu voto é obrigatório! Idade: ${idade}`
+            }
+               
+        }           
+    </script>
+</body>
+</html>
